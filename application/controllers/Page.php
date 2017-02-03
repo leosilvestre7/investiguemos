@@ -18,7 +18,7 @@ class Page extends CI_Controller {
          */
         $library = array('smarty_tpl', 'fecha', 'mantenimiento', 'archivo');
         $helper = array('url');
-        $model = array('m_articulo', 'm_articulo_detalle', 'm_autor', 'm_libro', 'm_tema', 'm_categoria');
+        $model = array('m_articulo', 'm_articulo_detalle', 'm_autor', 'm_blog', 'm_tema', 'm_categoria');
         $this->load->library($library);
         $this->load->helper($helper);
         $this->load->model($model);
@@ -208,16 +208,39 @@ class Page extends CI_Controller {
             }
         }
 
-
-
-
-
         $data = array_merge($data, $this->items);
         $this->smarty_tpl->view('web/structure/header', $data);
         $this->smarty_tpl->view('web/structure/inter_header', $data);
         $this->smarty_tpl->view('web/page/Home', $data);
         $this->smarty_tpl->view('web/structure/inter_footer', $data);
         $this->smarty_tpl->view('web/structure/footer', $data);
+    }
+
+    public function descripcion(){
+      $data['page_title'] = $this->items['proyecto'] . ' | ¿Qué es Investiguemos.net?';
+      $data['estado'] = 'current';
+      $data['imagen'] = 'banner.jpg';
+      $data['title']= "Blog - Sabino Muñoz";
+      $data['descripcion']= "Investiguemos.net es un espacio libre de desarrollo cultural que utilizando, en primer lugar,
+      los principios del modelo de  la indisciplinariedad metodológica y en segundo";
+      /* -------------------------------------- */
+
+      $where = array('blog.id' => 1, 'blog.oculto' => 0);
+      $blog = $this->m_blog->mostrar($where);
+      if (!empty($blog)) {
+          $data['id'] = $blog['id'];
+          $data['descrip'] = $blog['descripcion'];
+      } else {
+          echo $this->url_comp->direccionar(base_url() . 'home', TRUE);
+          EXIT;
+      }
+
+      $data = array_merge($data, $this->items);
+      $this->smarty_tpl->view('web/structure/header', $data);
+      $this->smarty_tpl->view('web/structure/inter_header', $data);
+      $this->smarty_tpl->view('web/page/Descripcion', $data);
+      $this->smarty_tpl->view('web/structure/inter_footer', $data);
+      $this->smarty_tpl->view('web/structure/footer', $data);
     }
 
     public function categoria($url = '') {

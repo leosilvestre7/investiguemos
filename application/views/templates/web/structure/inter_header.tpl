@@ -1,12 +1,12 @@
 <body id="page-top">
     <!-- Start Navigation -->
-  
-      
+
+
             <div class="container" style="background: #00bffe;">
                 <div class="row">
                     <div class="col-md-6">
                         <p class="mn-fecha1">
-                            <span>Fecha:</span> 
+                            <span>Fecha:</span>
                         {if isset($fecha2)}{$fecha2}{/if}
                     </p>
                     <ul class="hd-listred">
@@ -16,9 +16,9 @@
                     </ul>
                     <button id="buscar" style="display: none;"></button>
                 </div>
-               
+
               <!--  <div class="col-md-6">
-                    
+
 
                 </div>-->
             </div>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container">  
+            <div class="container">
                 <div class="attr-nav">
                     <ul>
                         <li class="search" style="    margin-right: 48px;">
@@ -56,17 +56,19 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeInUp">
-                        <li class="blog-mnhvr"><a href="{$base_url}home">Home</a></li>                    
-                        <!--<li class="blog-mnhvr"><a href="#">Sobre mí</a></li>-->
-                        <li class="blog-mnhvr"><a href="{$base_url}categoria/ambiente">Ambiente</a></li>
+                        <li class="blog-mnhvr"><a href="{$base_url}home">Home</a></li>
+                        <li class="blog-mnhvr"><a href="{$base_url}descripcion">¿Qué es Investiguemos.net?</a></li>
+                        <li class="blog-mnhvr"><a href="{$base_url}categoria/investigacion">Investigación Científica</a></li>
                         <li class="blog-mnhvr"><a href="{$base_url}categoria/educacion">Educación</a></li>
                         <li class="blog-mnhvr"><a href="{$base_url}categoria/informacion">Información</a></li>
-                        <li class="blog-mnhvr"><a href="{$base_url}categoria/investigacion">Investigación</a></li>
+                        <li class="blog-mnhvr"><a href="{$base_url}categoria/ambiente">Ambiente</a></li>
+                        <li class="blog-mnhvr"><a href="{$base_url}categoria/evaluacion">Evaluación</a></li>
+                        <li class="blog-mnhvr"><a href="{$base_url}categoria/productos">Productos</a></li>
                         <li class="blog-mnhvr"><a href="{$base_url}categoria/actividades">Actividades</a></li>
 
                     </ul>
                 </div>
-            </div>   
+            </div>
         </nav>
     </section>
      </div>
